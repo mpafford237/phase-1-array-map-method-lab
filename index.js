@@ -12,5 +12,21 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
-}
+  return tutorials.map((tutorial) => {
+    // Split each tutorial name into an array of words
+    const words = tutorial.split(' ');
+
+    // Capitalize the first letter of each word
+    const capitalizedWords = words.map((word) => {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    });
+
+    // Join the words back together to form the transformed tutorial name
+    const transformedTutorial = capitalizedWords.join(' ');
+
+    // Return the transformed tutorial name
+    return transformedTutorial;
+  });
+};
+
+console.log(titleCased());
